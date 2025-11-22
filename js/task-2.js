@@ -25,14 +25,14 @@ const images = [
   },
 ];
 
-const galery = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery");
 
-images.forEach(({ url, alt }) => {
-  galery.insertAdjacentHTML(
-    "afterbegin",
-    `<li><img src="${url}" alt="${alt}"></li>`
-  );
-});
+// prettier-ignore
+const markup = images
+  .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
+  .join("");
+
+gallery.insertAdjacentHTML("beforeend", markup);
 
 // Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>.
 // Ти можеш створити й додати HTML-елементи, використовуючи document.createElement() і elem.append()

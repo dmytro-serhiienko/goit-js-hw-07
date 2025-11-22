@@ -9,6 +9,6 @@ inpt.addEventListener("input", (event) => {
   if (event.target.value.trim() === "") {
     spn.textContent = "Anonymous";
   } else {
-    spn.textContent = event.target.value;
+    spn.textContent = event.target.value.trim();
   }
 });
